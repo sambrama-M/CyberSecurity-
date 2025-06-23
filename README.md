@@ -9,6 +9,7 @@ This repository contains the results and findings of a basic network reconnaissa
 
 3.Executed a TCP SYN scan with:
   nmap -sS 192.168.1.34
+  
 5.Collected and documented active IPs and their open ports.
 
 7.Researched common services running on those ports.
