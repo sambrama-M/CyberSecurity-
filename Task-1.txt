@@ -1,0 +1,115 @@
+                                                                              TASK- 1
+
+1.Installed Nmap :
+
+2.Found my local IP range from cmd by typing a command in cmd(command prompt) ipconfig (XXX.XXX.X.XX) :
+
+3.Run: nmap -sS XXX.XXX.X.XX to perform TCP SYN scan :
+  
+  Nmap scan report for YATHI3108.bbrouter (XXX.XXX.X.XX)
+  Host is up (0.00063s latency).
+
+4.Noted down ip addresses and open ports found.:
+ 
+  PORT      STATE SERVICE       VERSION
+  135/tcp   open  msrpc         Microsoft Windows RPC
+  139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+  445/tcp   open  microsoft-ds?
+  2179/tcp  open  vmrdp?
+  5432/tcp  open  postgresql    PostgreSQL DB 9.6.0 or later
+  16992/tcp open  http          Intel Active Management Technology User Notification Service httpd 12.0.95.2489
+
+5.Researched common services running on those ports :
+   
+  Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows, cpe:/h:intel:active_management_technology:12.0.95.2489
+
+6.Identified potential security risks from open ports :
+  
+  TCP Sequence Prediction: Difficulty=258 (Good luck!) there is no risk found!
+
+
+
+OBJECTIVES:Learnt to discover open ports on device in my local network to understand network exposure.
+TOOLS USED : Nmap.
+
+OUTCOME: Basic network reconnaissance skills,understanding network service exposure
+
+
+                                                                           
+                                                                      "FINAL OUTPUT"
+
+Starting Nmap 7.97 ( https://nmap.org ) at 2025-06-23 18:38 +0530
+NSE: Loaded 158 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 18:39
+Completed NSE at 18:39, 0.00s elapsed
+Initiating NSE at 18:39
+Completed NSE at 18:39, 0.00s elapsed
+Initiating NSE at 18:39
+Completed NSE at 18:39, 0.00s elapsed
+Initiating Parallel DNS resolution of 1 host. at 18:39
+Completed Parallel DNS resolution of 1 host. at 18:39, 0.55s elapsed
+Initiating SYN Stealth Scan at 18:39
+Scanning YATHI3108.bbrouter (192.168.1.34) [1000 ports]
+Discovered open port 445/tcp on XXX.XXX.X.XX
+Discovered open port 135/tcp on XXX.XXX.X.XX
+Discovered open port 139/tcp on xxx.xxx.x.xx
+Discovered open port 5432/tcp on xxx.xxx.x.xx
+Discovered open port 2179/tcp on xxx.xxx.x.xx
+Discovered open port 16992/tcp on xxx.xxx.x.xx
+Completed SYN Stealth Scan at 18:39, 0.06s elapsed (1000 total ports)
+Initiating Service scan at 18:39
+Scanning 6 services on YATHI3108.bbrouter (192.168.1.34)
+Completed Service scan at 18:39, 21.38s elapsed (6 services on 1 host)
+Initiating OS detection (try #1) against YATHI3108.bbrouter (192.168.1.34)
+NSE: Script scanning xxx.xxx.x.xx.
+Initiating NSE at 18:39
+Completed NSE at 18:39, 16.18s elapsed
+Initiating NSE at 18:39
+Completed NSE at 18:39, 0.54s elapsed
+Initiating NSE at 18:39
+Completed NSE at 18:39, 0.00s elapsed
+Nmap scan report for YATHI3108.bbrouter (xxx.xxx.x.xx)
+Host is up (0.00060s latency).
+Not shown: 994 closed tcp ports (reset)
+PORT      STATE SERVICE       VERSION
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds?
+2179/tcp  open  vmrdp?
+5432/tcp  open  postgresql    PostgreSQL DB 9.6.0 or later
+16992/tcp open  http          Intel Active Management Technology User Notification Service httpd 12.0.95.2489
+|_http-server-header: Intel(R) Active Management Technology 12.0.95.2489
+| http-title: Intel&reg; Active Management Technology
+|_Requested resource was /logon.htm
+| http-methods: 
+|_  Supported Methods: GET HEAD POST
+Device type: general purpose
+Running: Microsoft Windows 10|11
+OS CPE: cpe:/o:microsoft:windows_10 cpe:/o:microsoft:windows_11
+OS details: Microsoft Windows 10 1607 - 11 23H2
+Uptime guess: 0.005 days (since Mon Jun 23 18:32:05 2025)
+Network Distance: 0 hops
+TCP Sequence Prediction: Difficulty=253 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows, cpe:/h:intel:active_management_technology:12.0.95.2489
+
+Host script results:
+| smb2-time: 
+|   date: 2025-06-23T13:09:27
+|_  start_date: N/A
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+
+NSE: Script Post-scanning.
+Initiating NSE at 18:39
+Completed NSE at 18:39, 0.00s elapsed
+Initiating NSE at 18:39
+Completed NSE at 18:39, 0.00s elapsed
+Initiating NSE at 18:39
+Completed NSE at 18:39, 0.00s elapsed
+Read data files from: C:\Program Files (x86)\Nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 44.24 seconds
+           Raw packets sent: 1016 (45.418KB) | Rcvd: 2046 (87.346KB)
