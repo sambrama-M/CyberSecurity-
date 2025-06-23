@@ -2,6 +2,7 @@
 This repository contains the results and findings of a basic network reconnaissance task performed using Nmap. The objectives included identifying active devices, open ports, and potential security risks in the local network.
 
 🧾 Steps Performed:
+
 1.Installed Nmap from the official site.
 
 2.Identified the local IP range using ipconfig/ifconfig.
